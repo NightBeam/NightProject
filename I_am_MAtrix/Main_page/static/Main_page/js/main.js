@@ -19,19 +19,24 @@ let listOfLinks = GetListOfLinks();
 console.log(listOfLinks[0].href)
 console.log(document.location.href);
 for(let i = 0;i < listOfLinks.length;i++){
-  if(listOfLinks[i].href != listOfLinks[0].href || listOfLinks[i].href != listOfLinks[listOfLinks.length - 1].href){
-    if(listOfLinks[i].href == document.location.href){
-      pastEl.href = listOfLinks[i-1].href;
+  if(document.location.href == listOfLinks[0].href || document.location.href == listOfLinks[listOfLinks.length - 1].href){
+    if(listOfLinks[0].href == document.location.href){
+      console.log(listOfLinks[i].href);
+      pastEl.href = listOfLinks[listOfLinks.length - 1].href;
       futureEl.href = listOfLinks[i+1].href;
+      break;
+    }
+    else if(listOfLinks[listOfLinks.length - 1].href == document.location.href && listOfLinks[listOfLinks.length - 1].href == listOfLinks[i].href){
+      pastEl.href = listOfLinks[i - 1].href;
+      futureEl.href = listOfLinks[0].href;
+      break;
     }
   }
-  else if(listOfLinks[0].href == document.location.href){
-    pastEl.href = listOfLinks[listOfLinks.length - 1].href;
-    futureEl.href = listOfLinks[i+1].href;
-  }
-  else if(listOfLinks[listOfLinks.length - 1].href == document.location.href){
+  else if(document.location.href == listOfLinks[i].href ){
+    console.log(listOfLinks[i].href);
     pastEl.href = listOfLinks[i - 1].href;
-    futureEl.href = listOfLinks[0].href;
+    futureEl.href = listOfLinks[i + 1].href;
+    break;
   }
 }
 
