@@ -1,0 +1,17 @@
+{% extends 'Main_page/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="content">
+      <div class="name_of_page">{{name_of_page}}</div>
+      <div class="images">
+        <div id="el1"><img src="{% static 'Main_page/images/Jinx.png'%}"></div>
+        <div id="el1"><img src="{% static 'Main_page/images/KaisaHuman.png'%}"></div>
+        <div id="el1"><img src="{% static 'Main_page/images/Neon.png'%}"></div>
+        <div id="el1"><img src="{% static 'Main_page/images/Kaisa.png'%}"></div>
+        <div id="el1"><img src="{% static 'Main_page/images/Jinxs.png'%}"></div>
+        <div id="el1"><img src="{% static 'Main_page/images/Arcane.png'%}"></div>
+      </div>
+    </div>
+{% endblock %}

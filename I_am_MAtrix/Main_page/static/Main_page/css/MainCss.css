@@ -1,0 +1,279 @@
+
+/*Обнуление*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+body{height:100%;}
+.container{
+	min-height:100%;
+	display:flex;
+	flex-direction:column;
+}
+/*-----------------------------------*/
+
+.head{
+	height:200px;
+	background: linear-gradient(0deg, rgba(17,17,17,1) 50%, rgba(31,31,31,1) 100%);
+	width:100%;
+	border:1px solid black;
+}
+.top_of_head{
+ 	height:20px;
+	background: linear-gradient(43deg, rgba(39,224,213,1) 18%, rgba(171,0,255,1) 96%);
+}
+.name_of_club{
+	color:white;
+	font-size:350%;
+	font-weight:bold;
+	border:8px solid white;
+	padding:15px;
+  float:left;
+	margin-left: 30px;
+	margin-top:18px;
+	display:inline-block;
+	font-family:monospace;
+}
+
+#check-burger{
+	transform:scale(10);
+	opacity:0.0;
+}
+.menu-burger  span{
+	transition-duration: 0.2s;
+  display: block;
+	border-bottom: 8px solid white;
+	margin-bottom:19%;
+	margin-right:10%;
+	margin-left:10%;
+}
+#el1{
+		margin-top:19%;
+}
+.menu-burger{
+	width:150px;
+	background: linear-gradient(0deg, rgba(17,17,17,1) 50%, rgba(31,31,31,1) 100%);
+	display: block;
+	position:absolute;
+	right:30px;
+	top:40px;
+	border: 8px solid white;
+	z-index: 3;
+	cursor:pointer;
+}
+#check-burger:checked ~ .list_of_links{
+	transition-duration: 0.2s;
+	height:1500px;
+	border-bottom: 20px solid white;
+	border-image: linear-gradient(43deg, rgba(39,224,213,1) 18%, rgba(171,0,255,1) 96%);
+	border-image-slice: 1;
+}
+#check-burger:checked  ~ .menu-burger #el1{
+	transition-duration: 0.2s;
+	transform:rotate(45deg);
+	position:relative;
+	top: 33px;
+}
+#check-burger:checked  ~ .menu-burger #el2{
+	transition-duration: 0.2s;
+	opacity: 0.0;
+}
+#check-burger:checked  ~ .menu-burger #el3{
+	transition-duration: 0.2s;
+	transform:rotate(-45deg);
+	position:relative;
+	top: -33px;
+}
+.list_of_links{
+	z-index:10;
+	transition-duration: 0.2s;
+	position:relative;
+	top:30px;
+	width:100%;
+	height:5px;
+	background-color: rgba(17,17,17,1);
+	overflow: hidden;
+}
+#one_of_list{
+	color:white;
+	font-size:900%;
+	font-family:monospace;
+	display:block;
+	text-align:center;
+	font-weight:bold;
+	padding-top:30px;
+	padding-bottom:30px;
+	margin-right:2%;
+	margin-left:2%;
+	border-bottom:5px solid white;
+}
+.list_of_links ul :first-child #one_of_list{
+		margin-top:75px;
+}
+.list_of_links ul :last-child #one_of_list{
+		margin-bottom:150px;
+}
+#one_of_list:hover{
+	color:black;
+	background-color:white;
+}
+
+/*-----------------------------------*/
+.name_of_page{
+	font-size:800%;
+	font-family: monospace;
+	font-weight:bold;
+	text-align: center;
+	margin-top:7%;
+	color:black;
+}
+.content{
+	margin-left:6%;
+	margin-right:6%;
+	flex: 1 1 auto;
+}
+
+.images #el1{
+	width:100%;
+	height:100%;
+	border: 10px solid white;
+	margin-top:5%;
+	border-radius: 100px;
+	overflow: hidden;
+	-webkit-box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
+	-moz-box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
+	box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
+}
+.images #el1 img{
+	width:100%;
+}
+.images{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content:space-around;
+}
+.podval{
+	z-index:-1;
+	margin-top:10%;
+}
+.top_podval{
+	border-top:3px solid rgba(17,17,17,1);;
+	margin-left:5%;
+	margin-right:5%;
+}
+.bottom_podval{
+}
+.transition{
+}
+#past{
+	float:left;
+	margin-top:10%;
+	margin-bottom:10%;
+}
+#future{
+	float:right;
+	margin-top:10%;
+	margin-bottom:10%;
+}
+#past a{
+	font-size:500%;
+	color:black;
+	margin-left:50px;
+	font-family:monospace;
+}
+#future a{
+	font-size:500%;
+	color:black;
+	margin-right:50px;
+	font-family:monospace;
+}
+
+/* Telegam bot */
+.QRcode{
+	text-align:center;
+}
+.QRcode img{
+	width: 100%;
+}
+
+/* Our Games */
+.gamesblock{
+	height:600px;
+	margin-top:150px;
+	margin-right:3%;
+	margin-left:3%;
+	background-color: rgb(240,240,252);
+	border: 15px solid white;
+	-webkit-box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
+	-moz-box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
+	box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
+	border-radius: 100px;
+}
+.gamesblock #image_of_game {
+		border-right:30px solid white;
+		width:50%;
+		float:left;
+}
+.gamesblock #image_of_game img{
+		width:100%;
+}
+
+.text_of_game{
+	margin-top: 30px;
+	margin-right:200px;
+}
+
+.text_of_game #name_of_game{
+		font-size:200px;
+		font-family:monospace;
+		font-weight:bold;
+}
+
+.text_of_game #link_on_game{
+		font-size:150px;
+		font-family:monospace;
+		font-weight:bold;
+}
+
+.gamesblock #link_on_game a{
+		color: rgb(148,228,211);
+}
+
+/*statistic*/
+.diagrams{
+	display:flex;
+	width:50%;
+}

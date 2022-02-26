@@ -1,0 +1,12 @@
+{% extends 'Main_page/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="content">
+      <div class="name_of_page">{{name_of_page}}</div>
+      <div class="QRcode">
+        <img src="{% static 'Main_page/images/TelegramBotImg/QRcode.png' %}" alt="">
+      </div>
+    </div>
+{% endblock %}
