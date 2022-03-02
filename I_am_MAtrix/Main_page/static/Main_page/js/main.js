@@ -41,57 +41,10 @@ for(let i = 0;i < listOfLinks.length;i++){
 }
 
 
+
+
 let a = window.innerWidth;
 let b = window.innerHeight;
 console.log(`width ${a}`);
 console.log(`height ${b}`);
-if(document.querySelector(".canvas") != null) {
-  let canv = document.querySelectorAll(".canvas");
-  for(let i of canv){
-    i.getContext("2d");
-    const data = {
-        datasets: [{
-            data: [10, 20, 30],
-            backgroundColor:[
-              '#E4556A',
-              '#E4D394',
-              '#67ACE4'
-            ],
-            borderColor:'white',
-            borderWidth:5
-        }],
 
-        labels: [
-            'Red',
-            'Yellow',
-            'Blue'
-        ]
-    };
-
-    const config =  new Chart(i,{
-      type: 'doughnut',
-      data: data,
-      options: {
-        plugins: {
-          legend: {
-            title:{
-              text:'Telegram Bot',
-              display: true,
-              font:{
-                size:65,
-                weight:'bold',
-              }
-            },
-            labels:{
-              boxWidth:100,
-              font:{
-                size:65,
-                weight: 'bold'
-              }
-            }
-          }
-        }
-      }
-    })
-  }
-}
