@@ -48,3 +48,10 @@ let b = window.innerHeight;
 console.log(`width ${a}`);
 console.log(`height ${b}`);
 
+var menuBurgerChecker = document.querySelector("#check-burger");
+if(menuBurgerChecker.checked == true){
+  console.log(menuBurgerChecker.checked);
+}
+console.log(menuBurgerChecker.checked);
+
+
