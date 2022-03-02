@@ -9,10 +9,10 @@
         {% for i in games %}
           <div class="gamesblock">
               <div id="image_of_game"><img src="{% static 'Main_page/images/OurGamesImg/KaisaHuman.png' %}" alt=""></div>
-            <div class="text_of_game">
-              <div id="name_of_game">{{i.game.name|upper}}</div>
-              <div id="link_on_game"><a href="{{i.game.link}}">Google Play</a></div>
-            </div>
+              <div class="text_of_game">
+                <div id="name_of_game">{{i.game.name|upper}}</div>
+                <div id="link_on_game"><a href="{{i.game.link}}">Google Play</a></div>
+              </div>
           </div>
         {% endfor %}
       </div>

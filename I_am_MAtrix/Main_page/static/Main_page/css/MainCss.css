@@ -227,7 +227,6 @@ body{height:100%;}
 
 /* Our Games */
 .gamesblock{
-	height:600px;
 	margin-top:150px;
 	margin-right:3%;
 	margin-left:3%;
@@ -237,10 +236,11 @@ body{height:100%;}
 	-moz-box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
 	box-shadow: 10px 10px 27px 0px rgba(34, 60, 80, 0.64);
 	border-radius: 100px;
+	overflow: hidden;
 }
 .gamesblock #image_of_game {
 		border-right:30px solid white;
-		width:50%;
+		width: 50%;
 		float:left;
 }
 .gamesblock #image_of_game img{
@@ -248,18 +248,19 @@ body{height:100%;}
 }
 
 .text_of_game{
-	margin-top: 30px;
-	margin-right:200px;
+	top:60px;
+	position:relative;
+	right:-15px;
 }
 
 .text_of_game #name_of_game{
-		font-size:200px;
+		font-size:80px;
 		font-family:monospace;
 		font-weight:bold;
 }
 
 .text_of_game #link_on_game{
-		font-size:150px;
+		font-size:75px;
 		font-family:monospace;
 		font-weight:bold;
 }
