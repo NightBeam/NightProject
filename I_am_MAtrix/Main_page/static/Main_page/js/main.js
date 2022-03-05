@@ -44,14 +44,30 @@ for(let i = 0;i < listOfLinks.length;i++){
 
 
 let a = window.innerWidth;
-let b = window.innerHeight;
+var b = window.innerHeight;
 console.log(`width ${a}`);
 console.log(`height ${b}`);
 
 var menuBurgerChecker = document.querySelector("#check-burger");
-if(menuBurgerChecker.checked == true){
-  console.log(menuBurgerChecker.checked);
+var listOfLink01 = document.querySelector(".list_of_links");
+var headHeight = document.querySelector(".head").offsetHeight;
+var nameOfPage = document.querySelector(".name_of_page");
+listOfLink01.style.top = headHeight  + "px";
+nameOfPage.style.marginTop = headHeight + 80 +'px';
+console.log(nameOfPage.style.marginTop);
+console.log(headHeight);
+var activeB = false;
+console.log(listOfLink01.clientHeight);
+function ShowMenu() {
+  if (activeB == false) {
+    activeB = true;
+    let minusHeight = (b - headHeight)+ "px"
+    listOfLink01.style.height = minusHeight;
+    console.log(listOfLink01.style.height);
+  } else {
+    activeB = false;
+    listOfLink01.style.height = 5 + "px";
+  }
 }
-console.log(menuBurgerChecker.checked);
 
 
