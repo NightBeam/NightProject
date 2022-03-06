@@ -240,11 +240,6 @@ body{height:100%;}
 .gamesblock #image_of_game img{
 		width:100%;
 }
-
-.text_of_game{
-
-}
-
 .text_of_game #name_of_game{
 		font-size:80px;
 		font-family:monospace;

@@ -41,33 +41,35 @@ for(let i = 0;i < listOfLinks.length;i++){
 }
 
 
-
-
-let a = window.innerWidth;
-var b = window.innerHeight;
-console.log(`width ${a}`);
-console.log(`height ${b}`);
-
-var menuBurgerChecker = document.querySelector("#check-burger");
-var listOfLink01 = document.querySelector(".list_of_links");
-var headHeight = document.querySelector(".head").offsetHeight;
-var nameOfPage = document.querySelector(".name_of_page");
-listOfLink01.style.top = headHeight  + "px";
-nameOfPage.style.marginTop = headHeight + 80 +'px';
-console.log(nameOfPage.style.marginTop);
-console.log(headHeight);
-var activeB = false;
-console.log(listOfLink01.clientHeight);
-function ShowMenu() {
-  if (activeB == false) {
-    activeB = true;
-    let minusHeight = (b - headHeight)+ "px"
-    listOfLink01.style.height = minusHeight;
-    console.log(listOfLink01.style.height);
-  } else {
-    activeB = false;
-    listOfLink01.style.height = 5 + "px";
+class WorkWithInputCB{
+  constructor(inputObj, workingObj){
+    this.inputObj = inputObj;
+    this.workingObj = workingObj;
   }
+
+  windowHeight = window.innerHeight;
+  headHeight = document.querySelector(".head").offsetHeight;
+  activeCB = false;
+
+  ShowMenu() {
+    if (this.activeCB == false) {
+      this.activeCB = true;
+      let minusHeight = (this.windowHeight - this.headHeight)+ "px";
+      this.workingObj.style.height = minusHeight;
+    } else {
+      this.activeCB = false;
+      this.workingObj.style.height = 5 + "px";
+    }
+  }
+
+  WorkWithTopOfHeader(){
+    let nameOfPage = document.querySelector(".name_of_page");
+    listOfLinkWorking.style.top = this.headHeight  + "px";
+    nameOfPage.style.marginTop = this.headHeight + 80 +'px';
+  }
+
 }
-
-
+var menuBurgerChecker = document.querySelector("#check-burger");
+var listOfLinkWorking = document.querySelector(".list_of_links");
+var workWithCB = new WorkWithInputCB(menuBurgerChecker, listOfLinkWorking);
+workWithCB.WorkWithTopOfHeader();
