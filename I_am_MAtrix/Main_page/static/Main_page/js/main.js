@@ -74,3 +74,4 @@ var listOfLinkWorking = document.querySelector(".list_of_links");
 var workWithCB = new WorkWithInputCB(menuBurgerChecker, listOfLinkWorking);
 workWithCB.WorkWithTopOfHeader();
 
+//redirect

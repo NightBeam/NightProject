@@ -6,6 +6,9 @@
     <div class="content">
       <div class="name_of_page">{{name_of_page}}</div>
       <div class="info_about_us">
+        {% for i in paragraphs %}
+          <div id="ph">{{i.text}}</div>
+        {% endfor %}
       </div>
     </div>
 {% endblock %}

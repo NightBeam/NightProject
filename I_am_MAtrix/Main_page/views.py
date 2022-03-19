@@ -1,21 +1,23 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from .models import *
 
+infaAU = InfaAboutUs.objects.all()
+imagesOW = ImagesOurWorks.objects.all()
 
 game_info = [{"game" : {"name":"Fruit Fight","link": "#"}}]
 ourGamesContext =  {"name_of_page": "OUR GAMES","games" : game_info}
-
-
-
+aboutUsContext = {'name_of_page': "ABOUT US", 'paragraphs': infaAU}
 
 # Create your views here.
 def AboutUs(request):
-    return render(request,'Main_page/AboutUs.html',{'name_of_page': "ABOUT US"})
+    return render(request,'Main_page/AboutUs.html',context=aboutUsContext)
 
 def OurWorks(request):
-    return render(request,'Main_page/OurWorks.html',{'name_of_page': "OUR WORKS"})
+    return render(request,'Main_page/OurWorks.html',{'name_of_page': "OUR WORKS", 'imagesOfWorks': imagesOW})
 
 def OurGames(request):
-    return render(request,'Main_page/OurGames.html',context=ourGamesContext)
+        return redirect('/GIDACLUB/AboutUs/')
+
 def Statistics(request):
     return render(request,'Main_page/Statistics.html',{'name_of_page': "STATISTICS"})
 
