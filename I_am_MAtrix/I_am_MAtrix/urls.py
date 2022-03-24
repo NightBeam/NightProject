@@ -20,7 +20,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('Main_page.urls'))
+    path('GIDACLUB/',include('Main_page.urls'))
 ]
 
 if settings.DEBUG:

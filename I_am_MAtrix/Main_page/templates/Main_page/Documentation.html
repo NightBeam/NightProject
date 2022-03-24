@@ -6,6 +6,16 @@
     <div class="content">
       <div class="name_of_page">{{name_of_page}}</div>
       <div class="doc">
+        {% for i in programs %}
+          <div class="program">
+            <div id="image_of_program"><img src=" {{i.image.url}} "></div>
+            <div id="name_of_program"><h1>{{i.name}}</h1></div>
+            <div id="description_of_program">{{i.text}}</div>
+            <div class="links_on_program">
+              <div id="linkp"><a href="{{i.link1}}">{{i.nameOfLink1}}</a></div>
+            </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
 {% endblock %}

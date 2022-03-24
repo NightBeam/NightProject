@@ -5,10 +5,13 @@
 {% block content %}
     <div class="content">
       <div class="name_of_page">{{name_of_page}}</div>
-      <div class="images">
-          {% for i in imagesOfWorks %}
-            <div id="el1"><img src="{{i.image.url}}"></div>
+      <div class="video">
+          {% for i in videoOfWorks%}
+            <div id="el1">
+              <div class="vid"></div><video  controls loop="loop" src="{{ i.video.url }}"></video>
+              </video></div>
           {% endfor %}
+        </div>
       </div>
     </div>
 {% endblock %}

@@ -7,23 +7,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale">
   <link rel="stylesheet" href="{% static 'Main_page/css/MainCss.css' %}"/>
+  <link rel="icon" href="{% static 'Main_page/images/CLUBImg/GIDACLUBSITE.png' %}" type="image/png" sizes="180x180" >
   <title>GIDA CLUB</title>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="head">
-        <div class="top_of_head">
-      </div>
         <div class="bottom_of_head">
-          <div class="name_of_club">GIDA<br>CLUB</div>
+          <div class="name_of_club"><img src="{% static 'Main_page/images/CLUBImg/GIDACLUBLOGO.png' %}"></div>
             <div class="menu_burger">
-                <input type="checkbox" id="check-burger" onclick="workWithCB.ShowMenu()"/>
-                <label for="check-burger" class="menu-burger">
-                  <span id="el1"></span>
-                  <span id="el2"></span>
-                  <span id="el3"></span>
-                </label>
+                <input type="button" class="button_links" value="M" onclick="workWithCB.ShowMenu()"/></input>
                 <div class="list_of_links">
                   <ul>
                     <li><a href="{% url 'about_us' %}" id="one_of_list">ABOUT US</a></li>
@@ -49,6 +43,7 @@
             <div id="past">
               <a href=""></a>
             </div>
+            <div class="dot">...</div>
             <div id="future">
               <a href=""></a>
             </div>
@@ -58,6 +53,6 @@
     </footer>
   </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-  <script type="text/javascript" src="{% static 'Main_page/js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'Main_page/js/main.js' %}"></script>
 </body>
 </html>

@@ -5,10 +5,18 @@
 {% block content %}
     <div class="content">
       <div class="name_of_page">{{name_of_page}}</div>
-      <div class="info_about_us">
+        <div class="info_about_us">
         {% for i in paragraphs %}
           <div id="ph">{{i.text}}</div>
         {% endfor %}
+        </div>
+        <div class="We">
+          {% for i in weAre %}
+          <div class="WeAre">
+            <div id="fotoW"><img src="{{i.foto.url}}"></img></div>
+            <div id="nameW"><a href="{{i.vk}}">{{i.name}}</a></div>
+          </div>
+          {% endfor %}
       </div>
     </div>
 {% endblock %}
