@@ -44,7 +44,7 @@ const config_1 = {
                 display: true,
                 text:'Форма',
                 font:{
-                    size:'80',
+                    size:'40',
                     weight:'bold',
                     family:'monospace'
                 }
@@ -87,7 +87,7 @@ const config_2 = {
                 text:'Телеграм Бот',
                 font:{
                     weight:'bold',
-                    size:'80',
+                    size:'40',
                     family:'monospace'
                 }
             },

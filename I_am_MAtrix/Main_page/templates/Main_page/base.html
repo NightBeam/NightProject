@@ -5,7 +5,6 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale">
   <link rel="stylesheet" href="{% static 'Main_page/css/MainCss.css' %}"/>
   <link rel="icon" href="{% static 'Main_page/images/CLUBImg/GIDACLUBSITE.png' %}" type="image/png" sizes="180x180" >
   <title>GIDA CLUB</title>
@@ -17,14 +16,22 @@
         <div class="bottom_of_head">
           <div class="name_of_club"><img src="{% static 'Main_page/images/CLUBImg/GIDACLUBLOGO.png' %}"></div>
             <div class="menu_burger">
+                <div class="list_of_links_screen">
+                    <div id="screen_b"><a href="{% url 'about_us' %}" id="one_of_list_screen">О НАС</a></div>
+                    <div id="screen_b"><a href="{% url 'our_works' %}" id="one_of_list_screen">РАБОТЫ</a></div>
+                    <div id="screen_b"><a href="{% url 'our_games' %}"class="disable_screen">ИГРЫ</a></div>
+                    <div id="screen_b"><a href="{% url 'statistics' %}" id="one_of_list_screen">СТАТИСТИКА</a></div>
+                    <div id="screen_b"><a href="{% url 'documentation' %}" id="one_of_list_screen">ДОКУМЕНТАЦИЯ</a></div>
+                    <div id="screen_b"><a href="{% url 'telegram_bot' %}" id="one_of_list_screen">TELEGRAM BOT</a></div>
+                </div>
                 <input type="button" class="button_links" value="M" onclick="workWithCB.ShowMenu()"/></input>
                 <div class="list_of_links">
                   <ul>
-                    <li><a href="{% url 'about_us' %}" id="one_of_list">ABOUT US</a></li>
-                    <li><a href="{% url 'our_works' %}" id="one_of_list">OUR WORKS</a></li>
-                    <li><a href="{% url 'our_games' %}"class="disable">OUR GAMES</a></li>
-                    <li><a href="{% url 'statistics' %}" id="one_of_list">STATISTICS</a></li>
-                    <li><a href="{% url 'documentation' %}" id="one_of_list">DOCUMENTATION</a></li>
+                    <li><a href="{% url 'about_us' %}" id="one_of_list">О НАС</a></li>
+                    <li><a href="{% url 'our_works' %}" id="one_of_list">РАБОТЫ</a></li>
+                    <li><a href="{% url 'our_games' %}"class="disable">ИГРЫ</a></li>
+                    <li><a href="{% url 'statistics' %}" id="one_of_list">СТАТИСТИКА</a></li>
+                    <li><a href="{% url 'documentation' %}" id="one_of_list">ДОКУМЕНТАЦИЯ</a></li>
                     <li><a href="{% url 'telegram_bot' %}" id="one_of_list">TELEGRAM BOT</a></li>
                   </ul>
                 </div>
