@@ -60,5 +60,17 @@ class We(models.Model):
 
     class Meta:
         verbose_name = 'Вы'
-        verbose_name_plural = 'вас'
+        verbose_name_plural = 'Вас'
+        ordering = ['id']
+
+class TypeOfModeling(models.Model):
+    name = models.CharField(max_length=50,default=None,verbose_name='Вид моделирования')
+    number = models.IntegerField(default=None,verbose_name='Кол-во проголосовавших')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Тип моделирования'
+        verbose_name_plural = 'Типы моделирования'
         ordering = ['id']

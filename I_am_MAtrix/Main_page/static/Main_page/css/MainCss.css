@@ -315,9 +315,89 @@ video{
 /*statistic*/
 .diagrams{
 	display:flex;
-	width:50%;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.diagram{
+	margin-top:75px;
+}
+#canvasF{
+	height:600px;
+	width:600px;
+}
+#canvasTB{
+	height:600px;
+	width:600px;
+}
+.harac ul{
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.harac{
+	margin-top: 75px;
+	font-size: 75px;
+	font-family: monospace;
+	font-weight: bold;
+}
+#elH1{
+	margin-top: 25px;
+	background-color: rgb(186,226,225);
+	border:10px solid rgb(93,192,191);
+	border-radius: 25px;
+	padding: 10px;
+	color:white;
+}
+#elH2{
+	margin-top: 25px;
+	background-color: rgb(249,204,214);
+	border:10px solid rgb(248,136,163);
+	border-radius: 25px;
+	padding: 10px;
+	color:white;
+
+}
+#elH3{
+	margin-top: 25px;
+	background-color: rgb(197,223,243);
+	border:10px solid rgb(119,185,234);
+	border-radius: 25px;
+	padding: 10px;
+	color:white;
 }
 
+.descF{
+	margin-top: 50px;
+	background-color: #A39CD8;
+	font-size: 70px;
+	font-family: monospace;
+	padding:30px;
+	border-radius: 50px;
+	-webkit-box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
+	box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
+}
+.descF :last-child{
+	margin-top: 20px;
+}
+.descF p{
+	color:white;
+}
+#gF a{
+	color:rgb(103,56,179);
+	font-weight: bold;
+}
+
+#tB a{
+	color:rgb(103,56,179);
+	font-weight: bold;
+}
+#tB:hover{
+	text-decoration: underline;
+}
+#gF:hover{
+	text-decoration: underline;
+}
 /* AboutUs */
 .info_about_us{
 	border-radius: 50px;
@@ -374,6 +454,9 @@ video{
 #nameW a{
 	color:#A39CD8;
 	font-family: monospace;
+}
+#nameW a:hover{
+	text-decoration: underline;
 }
 /* Documentation */
 .program{
@@ -442,4 +525,51 @@ video{
 	-moz-box-shadow: 0px 0px 100px -11px rgba(236, 52, 95, 0.27);
 	box-shadow: 0px 0px 100px -11px rgba(236, 52, 95, 0.27);
 	border:none;
+}
+
+
+
+/*media*/
+
+@media screen{
+	.name_of_page{
+		font-size:70px;
+	}
+
+	/*AboutUs*/
+	.info_about_us{
+		font-size: 30px;
+	}
+	.WeAre{
+		height:240px;
+		width: 450px;
+	}
+	#nameW{
+		font-size: 30px;
+		margin:30px;
+	}
+
+	/*OurWorks*/
+	.video #el1 {
+		width:25%;
+		border-radius: 50px;
+		border: 7px solid white;
+	}
+	/*Statistics*/
+	#canvasF{
+		height:500px;
+		width:500px;
+	}
+	#canvasTB{
+		height:500px;
+		width:500px;
+	}
+	.harac{
+		font-size: 30px;
+	}
+	.descF{
+		font-size: 30px;
+	}
+	/*Documentation*/
+
 }
