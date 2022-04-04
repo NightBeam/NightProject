@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Main_page.apps.MainPageConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,79 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+if DEBUG:
+    MIDDLEWARE += [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ]
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
+    INTERNAL_IPS = ['127.0.0.1', ]
+
+    # this is the main reason for not showing up the toolbar
+    import mimetypes
+    mimetypes.add_type("application/javascript", ".js", True)
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS': False,
+    }
+
+
+
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "I_am_MAtrix.settings")
+
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+
+
+
+#bot settings
+    
+from Main_page.models import *
+key = '1857719214:AAFdr9bYxDlQiLKDi6otg8CGcWfJPHJOAnk'
+
+start_chatting = """Привет! Я GIDA BOT, виртуальный ассистент, специализирующийся на 3D-моделировании.
+Если ты пройдешь небольшой тест, то я смогу подобрать программу для тебя!
+Чтобы начать тест, нажми "Поехали"! """
+
+qustions = ["Какое устройство вы планируете использовать для 3D-моделирования?",
+"Планируете ли вы использовать платное (или бесплатное приложение)?",
+"Как вы планируете использовать 3D модели?",
+"Какой вид моделирования вас интеремует?",
+"Насколько углубленно вы собираетесь изучать 3D-моделирование?",
+"Допускаете ли вы возможность использования готовых объектов в создании модели?"
+]
+def pull_datas(nameT):
+    table = AnswersTable.objects.get(name=nameT)
+    list_of_datas = list()
+    list_of_datas.append(table.answer1)
+    list_of_datas.append(table.answer2)
+    list_of_datas.append(table.answer3)
+    list_of_datas.append(table.answer4)
+    list_of_datas.append(table.answer5)
+    return list_of_datas
+answers = {
+    'devices':pull_datas('devices'),
+    'cost':pull_datas('cost'),
+    'using':pull_datas('using'),
+    'type':pull_datas('type'),
+    'experience':pull_datas('experience'),
+    'prefabs':pull_datas('prefabs'),
+}
+
+price = """Укажите пожалуйста ваш бюджет, который вы можете выделить для приобретения программы."""
+priceSubscribe = """Укажите пожалуйста сумму, которую вы сможете выделять на программу ежемесячно."""
+
+subscription = False
+programs = {
+    'Blender':[],
+    'SolidWorks':[],
+    'SketchUp':[],
+    'Autodesk 3dsMax':[],
+    'ZBrush':[],
+    'Marvelous Designer':[],
+    'Substance 3D Painter':[],
+}

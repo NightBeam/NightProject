@@ -93,7 +93,7 @@ body{
 	box-shadow: 0px 0px 44px 10px rgba(32, 39, 135, 0.2);
 	
 }
-.button_links:hover{
+.button_links:active{
 	transition-duration: 0.3s;
 	color:white;
 	background-color:#26002C;
@@ -129,7 +129,7 @@ body{
 	margin-right:10%;
 	margin-left:10%;
 }
-#one_of_list:hover{
+#one_of_list:active{
 	transition-duration: 0.3s;
 	color:white;
 	background-color:#A39CD8;
@@ -538,215 +538,7 @@ video{
 }
 
 /*media*/
-
-@media screen and (min-width: 1600px) and (min-height: 900px){
-	.name_of_page{
-		font-size:40px;
-		margin-top: 10px;
-	}
-
-	/*AboutUs*/
-	.info_about_us{
-		font-size: 20px;
-		border-radius: 25px;
-		padding:10px;
-	}
-	.info_about_us #ph{
-		margin-top: 5px;
-		padding: 5px;
-	}
-	.We{
-		justify-content: space-around;
-	}
-	.WeAre{
-		height:100px;
-		width: 250px;
-		border-radius: 10px;
-	}
-	#nameW{
-		font-size: 20px;
-		margin:20px;
-	}
-
-	/*OurWorks*/
-	.video #el1 {
-		width:20%;
-		border-radius: 25px;
-		border: 5px solid white;
-	}
-	/*Statistics*/
-	.descF :last-child{
-		margin-top: 10px;
-	}
-	#elH1{
-		border-width: 5px;
-		margin-top: 40px;
-		border-radius: 20px;
-		padding: 10px;
-		color:white;
-	}
-	#elH2{
-		border-width: 5px;
-		margin-top: 40px;
-		border-radius: 20px;
-		padding: 10px;
-		color:white;
-	
-	}
-	#elH3{
-		border-width: 5px;
-		margin-top: 40px;
-		border-radius: 20px;
-		padding: 10px;
-		color:white;
-	}
-	
-	#canvasF{
-		height:400px;
-		width:400px;
-	}
-	#canvasTB{
-		height:400px;
-		width:400px;
-	}
-	.harac{
-		font-size: 20px;
-	}
-	.descF{
-		padding:15px;
-		font-size: 20px;
-		border-radius: 25px;
-	}
-	/*Documentation*/
-	.program{
-		border-radius:25px;
-		padding: 15px;
-		border: 7px solid white;
-		width: 400px;
-	}
-	#name_of_program h1{
-		font-size: 30px;
-		padding-bottom: 5px;
-	}
-	#description_of_program{
-		font-size: 140%;
-		margin-top: 30px;
-		border-radius: 25px;
-	}
-	#image_of_program{
-		text-align: center;
-		margin-top: 30px;
-		margin-bottom: 30px;
-	}
-	#image_of_program img{
-		width:150px;
-	}
-	.links_on_program{
-		margin-top: 40px;
-		margin-bottom: 20px;
-		display:flex;
-		justify-content: space-around;
-	}
-	 #linkp a{
-		transition-duration: 0.3s;
-		font-size: 25px;
-		color:#EC345F;
-		border-radius: 10px;
-		padding:1px;
-		background-color:white;
-		border: 3px solid #EC345F;
-	}
-	/*Telegram Bot*/
-	.QRcode{
-		overflow: visible;
-		border: none;
-		border-radius: 0px;
-		background: none;
-		box-shadow: none;
-	}
-	
-	.QRcode img{
-		width: 20%;
-		border: 5px solid white;
-		-webkit-box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
-		-moz-box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
-		box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
-		border-radius: 25px;
-	}
-	/***********************************/
-	.podval{
-		height: 100px;
-		margin-top: 40px;
-	}
-	#past a{
-		padding:15px;
-		font-size:30px;
-		border-radius:10px;
-		margin-left: 25px;
-	}
-	
-	#future a{
-		padding:15px;
-		font-size:30px;
-		border-radius:10px;
-		margin-left: 25px;
-	}
-	.dot{
-		font-size:60px;
-	}
-	.transition{
-		padding-top: 35px;
-	}
-	/******************top*/
-	.head{
-		height:60px;
-	}
-	.name_of_club{
-		width: 150px;
-		margin-top: 7px;
-	}
-	.button_links{
-		display:none;
-	}
-	.list_of_links{
-		display:none;
-	}
-	.list_of_links_screen{
-		display:flex;
-		justify-content:space-around;
-		margin-top: 20px;
-	}
-	.list_of_links_screen div{
-		margin-left: 30px;
-	}
-	#one_of_list_screen{
-		transition-duration: 0.3s;
-		color: white;
-		font-family: monospace;
-		font-size: 25px;
-	}
-	.disable_screen{
-		color:rgb(161, 161, 161);
-		font-family: monospace;
-		font-size: 25px;
-		pointer-events: none;
-	}
-	#screen_b{
-		border-left: 5px solid white;
-		padding-left: 5px;
-	}
-	#screen_b  a:hover {
-		transition-duration: 0.3s;
-		border-radius: 10px;
-		text-decoration: underline;
-	}
-	.content{
-		margin-left:50px;
-		margin-right:50px;
-
-	}
-}
-@media screen and (min-width: 1024px) and (min-height: 726px){
+@media screen and (min-width: 1024px){
 	.name_of_page{
 		font-size:40px;
 		margin-top: 10px;
@@ -940,6 +732,213 @@ video{
 	}
 	#screen_b{
 		border-left: 3px solid white;
+		padding-left: 5px;
+	}
+	#screen_b  a:hover {
+		transition-duration: 0.3s;
+		border-radius: 10px;
+		text-decoration: underline;
+	}
+	.content{
+		margin-left:50px;
+		margin-right:50px;
+
+	}
+}
+@media screen and (min-width: 1600px){
+	.name_of_page{
+		font-size:40px;
+		margin-top: 10px;
+	}
+
+	/*AboutUs*/
+	.info_about_us{
+		font-size: 20px;
+		border-radius: 25px;
+		padding:10px;
+	}
+	.info_about_us #ph{
+		margin-top: 5px;
+		padding: 5px;
+	}
+	.We{
+		justify-content: space-around;
+	}
+	.WeAre{
+		height:100px;
+		width: 250px;
+		border-radius: 10px;
+	}
+	#nameW{
+		font-size: 20px;
+		margin:20px;
+	}
+
+	/*OurWorks*/
+	.video #el1 {
+		width:20%;
+		border-radius: 25px;
+		border: 5px solid white;
+	}
+	/*Statistics*/
+	.descF :last-child{
+		margin-top: 10px;
+	}
+	#elH1{
+		border-width: 5px;
+		margin-top: 40px;
+		border-radius: 20px;
+		padding: 10px;
+		color:white;
+	}
+	#elH2{
+		border-width: 5px;
+		margin-top: 40px;
+		border-radius: 20px;
+		padding: 10px;
+		color:white;
+	
+	}
+	#elH3{
+		border-width: 5px;
+		margin-top: 40px;
+		border-radius: 20px;
+		padding: 10px;
+		color:white;
+	}
+	
+	#canvasF{
+		height:400px;
+		width:400px;
+	}
+	#canvasTB{
+		height:400px;
+		width:400px;
+	}
+	.harac{
+		font-size: 20px;
+	}
+	.descF{
+		padding:15px;
+		font-size: 20px;
+		border-radius: 25px;
+	}
+	/*Documentation*/
+	.program{
+		border-radius:25px;
+		padding: 15px;
+		border: 7px solid white;
+		width: 400px;
+	}
+	#name_of_program h1{
+		font-size: 30px;
+		padding-bottom: 5px;
+	}
+	#description_of_program{
+		font-size: 140%;
+		margin-top: 30px;
+		border-radius: 25px;
+	}
+	#image_of_program{
+		text-align: center;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	#image_of_program img{
+		width:150px;
+	}
+	.links_on_program{
+		margin-top: 40px;
+		margin-bottom: 20px;
+		display:flex;
+		justify-content: space-around;
+	}
+	 #linkp a{
+		transition-duration: 0.3s;
+		font-size: 25px;
+		color:#EC345F;
+		border-radius: 10px;
+		padding:1px;
+		background-color:white;
+		border: 3px solid #EC345F;
+	}
+	/*Telegram Bot*/
+	.QRcode{
+		overflow: visible;
+		border: none;
+		border-radius: 0px;
+		background: none;
+		box-shadow: none;
+	}
+	
+	.QRcode img{
+		width: 20%;
+		border: 5px solid white;
+		-webkit-box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
+		-moz-box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
+		box-shadow: 0px 0px 30px 9px rgba(34, 60, 80, 0.2);
+		border-radius: 25px;
+	}
+	/***********************************/
+	.podval{
+		height: 100px;
+		margin-top: 40px;
+	}
+	#past a{
+		padding:15px;
+		font-size:30px;
+		border-radius:10px;
+		margin-left: 25px;
+	}
+	
+	#future a{
+		padding:15px;
+		font-size:30px;
+		border-radius:10px;
+		margin-left: 25px;
+	}
+	.dot{
+		font-size:60px;
+	}
+	.transition{
+		padding-top: 35px;
+	}
+	/******************top*/
+	.head{
+		height:60px;
+	}
+	.name_of_club{
+		width: 150px;
+		margin-top: 7px;
+	}
+	.button_links{
+		display:none;
+	}
+	.list_of_links{
+		display:none;
+	}
+	.list_of_links_screen{
+		display:flex;
+		justify-content:space-around;
+		margin-top: 20px;
+	}
+	.list_of_links_screen div{
+		margin-left: 30px;
+	}
+	#one_of_list_screen{
+		transition-duration: 0.3s;
+		color: white;
+		font-family: monospace;
+		font-size: 20px;
+	}
+	.disable_screen{
+		color:rgb(161, 161, 161);
+		font-family: monospace;
+		font-size: 20px;
+		pointer-events: none;
+	}
+	#screen_b{
+		border-left: 5px solid white;
 		padding-left: 5px;
 	}
 	#screen_b  a:hover {

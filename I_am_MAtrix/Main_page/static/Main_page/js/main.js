@@ -62,16 +62,22 @@ class WorkWithInputCB{
   windowHeight = window.innerHeight;
   headHeight = document.querySelector(".head").offsetHeight;
   activeCB = false;
-
+  buttonLA = document.querySelector('.button_links')
 
   ShowMenu() {
     if (this.activeCB == false) {
       this.activeCB = true;
       let minusHeight = (this.windowHeight - this.headHeight)+ "px";
       this.workingObj.style.height = minusHeight;
+      this.buttonLA.style.transform = 'rotate(360deg)';
+      this.buttonLA.style.transitionDuration= '0.5s';
+      this.workingObj.style.transitionDuration= '0.5s';
     } else {
       this.activeCB = false;
       this.workingObj.style.height = 5 + "px";
+      this.buttonLA.style.transform = 'rotate(0deg)';
+      this.buttonLA.style.transitionDuration= '0.5s'
+      this.workingObj.style.transitionDuration= '0.5s';
     }
   }
 

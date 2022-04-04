@@ -42,7 +42,7 @@ const config_1 = {
         plugins: {
             title:{
                 display: true,
-                text:'Форма',
+                text:' Google Форма',
                 font:{
                     size:'40',
                     weight:'bold',
