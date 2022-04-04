@@ -194,15 +194,30 @@ answers = {
 }
 
 price = """Укажите пожалуйста ваш бюджет, который вы можете выделить для приобретения программы."""
-priceSubscribe = """Укажите пожалуйста сумму, которую вы сможете выделять на программу ежемесячно."""
+priceSubscribe = """Укажите пожалуйста сумму, которую вы сможете выделять на программу ежегодно."""
 
-subscription = False
-programs = {
-    'Blender':[],
-    'SolidWorks':[],
-    'SketchUp':[],
-    'Autodesk 3dsMax':[],
-    'ZBrush':[],
-    'Marvelous Designer':[],
-    'Substance 3D Painter':[],
+ChooseProgramDict = {
+    'devices':['PC', 'Laptop', 'Phone'],
+    'cost':['Free', 'Pay'],
+    'subscription':[True, False],
+    'pay':[0],
+    'using':['Series', 'VideoGames', 'Models'],
+    'typeOfModeling':['Solid', 'Polygonal', 'Sculpting'],
+    'experience':['Deep', 'Surface'],
+    'prefabs':['Help', 'Yourself']
 }
+endList = list()
+programsList = ProgramsForBot.objects.all()
+programsListForBot = dict()
+for i in programsList:
+    programsListForBot[str(i.name)] = [
+        i.settingsOfProgram.devices,
+        i.settingsOfProgram.cost,
+        i.settingsOfProgram.subscription,
+        i.settingsOfProgram.pay,
+        i.settingsOfProgram.using,
+        i.settingsOfProgram.typeOfModeling,
+        i.settingsOfProgram.experience,
+        i.settingsOfProgram.prefabs,
+        i.name
+    ]

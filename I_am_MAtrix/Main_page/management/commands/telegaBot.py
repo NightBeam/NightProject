@@ -41,36 +41,50 @@ class Command(BaseCommand):
                 bot.send_message(message.chat.id,'Напишите /start, чтобы начать.')
                 
         def Cost(message):
+            global endList
+            global ChooseProgramDict
             if(message.text == answers['devices'][0]):
+                endList.append(ChooseProgramDict['devices'][0])
                 SendTo(message,answers,'cost',1,Using)
             elif(message.text == answers['devices'][1]):
+                endList.append(ChooseProgramDict['devices'][1])
                 SendTo(message,answers,'cost',1,Using)
             elif(message.text == answers['devices'][2]):
+                endList.append(ChooseProgramDict['devices'][2])
                 SendTo(message,answers,'cost',1,Using)
 
         def Using(message):
+            global endList
+            global ChooseProgramDict
             def ToChoosePrice(price):
                 markup.keyboard.clear()
                 bot.send_message(message.chat.id,price,reply_markup=markupHide) 
                 bot.register_next_step_handler(message, ChoosePrice)
 
             if(message.text == answers['cost'][0]):
+                endList.append(ChooseProgramDict['cost'][0])
+                endList.append(ChooseProgramDict['subscription'][1])
+                endList.append(ChooseProgramDict['pay'][0])
                 SendTo(message,answers,'using',2,Type)
             elif(message.text == answers['cost'][1]):
+                endList.append(ChooseProgramDict['cost'][1])
+                endList.append(ChooseProgramDict['subscription'][1])
                 ToChoosePrice(price)
             elif(message.text == answers['cost'][2]):
-                global subscription
-                subscription = True
+                endList.append(ChooseProgramDict['cost'][1])
+                endList.append(ChooseProgramDict['subscription'][0])
                 ToChoosePrice(priceSubscribe)
 
         def ChoosePrice(message):
-            global subscription
-            priceS = 150000
+            global ChooseProgramDict
+            global endList
+            priceS = 180000
             priceNS = 200000
-            if(subscription == True):
+            if(endList[2] == True):
                 try:
                     if(int(message.text) > 0):
                         if(int(message.text) < priceS):
+                            endList.append(int(message.text))
                             SendTo(message,answers,'using',2,Type)
                         elif( int(message.text) > priceS):
                             bot.send_message(message.chat.id,'Введите пожалуйста сумму менее {}.'.format(priceS))
@@ -81,10 +95,11 @@ class Command(BaseCommand):
                 except Exception:
                     bot.send_message(message.chat.id,'Введите пожалуйста число.')
                     bot.register_next_step_handler(message, ChoosePrice)
-            elif(subscription == False):
+            elif(endList[2] == False):
                 try:
                     if(int(message.text) > 0):
                         if(int(message.text) < priceNS):
+                            endList.append(int(message.text))
                             SendTo(message,answers,'using',2,Type)
                         elif( int(message.text) > priceNS):
                             bot.send_message(message.chat.id,'Введите пожалуйста сумму менее {}.'.format(priceNS))
@@ -97,29 +112,57 @@ class Command(BaseCommand):
                     bot.register_next_step_handler(message, ChoosePrice)
 
         def Type(message):
+            global ChooseProgramDict
+            global endList
             if(message.text == answers['using'][0]):
+                endList.append(ChooseProgramDict['using'][0])
                 SendTo(message,answers,'type',3,Experience)
             elif(message.text == answers['using'][1]):
+                endList.append(ChooseProgramDict['using'][1])
                 SendTo(message,answers,'type',3,Experience)
             elif(message.text == answers['using'][2]):
+                endList.append(ChooseProgramDict['using'][2])
                 SendTo(message,answers,'type',3,Experience)
 
         def Experience(message):
+            global ChooseProgramDict
+            global endList
             if(message.text == answers['type'][0]):
+                endList.append(ChooseProgramDict['typeOfModeling'][0])
                 SendTo(message,answers,'experience',4,Prefabs)
             elif(message.text == answers['type'][1]):
+                endList.append(ChooseProgramDict['typeOfModeling'][1])
                 SendTo(message,answers,'experience',4,Prefabs)
             elif(message.text == answers['type'][2]):
+                endList.append(ChooseProgramDict['typeOfModeling'][2])
                 SendTo(message,answers,'experience',4,Prefabs)
 
         def Prefabs(message):
+            global ChooseProgramDict
+            global endList
             if(message.text == answers['experience'][0]):
+                endList.append(ChooseProgramDict['experience'][0])
                 SendTo(message,answers,'prefabs',5,End)
             elif(message.text == answers['experience'][1]):
+                endList.append(ChooseProgramDict['experience'][1])
                 SendTo(message,answers,'prefabs',5,End)
 
         def End(message):
-            if(message.text == message.text):
-                bot.send_message(message.chat.id,'{} - ты пидор😋.'.format(message.from_user.first_name),reply_markup=markupHide)
+            global ChooseProgramDict
+            global endList
+            
+            if(message.text == answers['prefabs'][0]):
+                endList.append(ChooseProgramDict['prefabs'][0])
+            elif(message.text == answers['prefabs'][1]):
+                endList.append(ChooseProgramDict['prefabs'][1])
+            bot.send_message(message.chat.id,'{}😋.'.format(endList),reply_markup=markupHide)
+            bot.send_message(message.chat.id,'{}😋.'.format(programsListForBot),reply_markup=markupHide)
+            for i in programsListForBot:
+                    if(endList[0] in programsListForBot[i][0] and endList[1] in programsListForBot[i][1] and endList[2] == programsListForBot[i][2] and endList[3] >= programsListForBot[i][3] and endList[4] in programsListForBot[i][4] and endList[5] in programsListForBot[i][5] and endList[6] in programsListForBot[i][6] and endList[7] in programsListForBot[i][7]):
+                        bot.send_message(message.chat.id,programsListForBot[i][8])
+
+
+            endList.clear()
+            bot.send_message(message.chat.id,'{}😋.'.format(endList))
         
         bot.polling(none_stop=True)
