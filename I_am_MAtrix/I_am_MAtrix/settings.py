@@ -192,7 +192,9 @@ answers = {
     'experience':pull_datas('experience'),
     'prefabs':pull_datas('prefabs'),
 }
-
+diagnostics = "Провожу диагностику опроса..."
+loading = "Загружаю программы..."
+aboutProgram = """Вы можете ознакомиться с краткой информацией о интересующей вас программе, указав ее номер."""
 price = """Укажите пожалуйста ваш бюджет, который вы можете выделить для приобретения программы."""
 priceSubscribe = """Укажите пожалуйста сумму, которую вы сможете выделять на программу ежегодно."""
 
@@ -206,6 +208,7 @@ ChooseProgramDict = {
     'experience':['Deep', 'Surface'],
     'prefabs':['Help', 'Yourself']
 }
+programsText = ""
 endList = list()
 programsList = ProgramsForBot.objects.all()
 programsListForBot = dict()
@@ -219,5 +222,6 @@ for i in programsList:
         i.settingsOfProgram.typeOfModeling,
         i.settingsOfProgram.experience,
         i.settingsOfProgram.prefabs,
-        i.name
+        i.name,
+        i.description
     ]

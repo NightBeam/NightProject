@@ -8,6 +8,7 @@ class Command(BaseCommand):
         import telebot
         from telebot import types
         import time
+        from threading import Thread
 
         bot = telebot.TeleBot(key)
 
@@ -31,7 +32,9 @@ class Command(BaseCommand):
         def Dev(message):
             if(message.text.upper() == 'Поехали!'.upper()):
                 bot.send_message(message.chat.id,'Круто!',reply_markup=markupHide)
+                time.sleep(0.5)
                 bot.send_message(message.chat.id,'Погнали!')
+                time.sleep(0.5)
                 markup.keyboard.clear()
                 markup.add(answers['devices'][1],answers['devices'][2])
                 markup.add(answers['devices'][0])
@@ -78,8 +81,8 @@ class Command(BaseCommand):
         def ChoosePrice(message):
             global ChooseProgramDict
             global endList
-            priceS = 180000
-            priceNS = 200000
+            priceS = 500000
+            priceNS = 1000000
             if(endList[2] == True):
                 try:
                     if(int(message.text) > 0):
@@ -150,19 +153,45 @@ class Command(BaseCommand):
         def End(message):
             global ChooseProgramDict
             global endList
+            global diagnostics
+            global loading
+            global aboutProgram
+            global programsText
             
+            def AddToShowList(message):
+                global programsText
+                showList = list()
+                #bot.send_message(message.chat.id,'{}😋.'.format(endList),reply_markup=markupHide)
+                #bot.send_message(message.chat.id,'{}😋.'.format(programsListForBot),reply_markup=markupHide)
+                for i in programsListForBot:
+                        if(endList[0] in programsListForBot[i][0] and endList[1] in programsListForBot[i][1] and endList[2] == programsListForBot[i][2] and endList[3] >= programsListForBot[i][3] and endList[4] in programsListForBot[i][4] and endList[5] in programsListForBot[i][5] and endList[6] in programsListForBot[i][6] and endList[7] in programsListForBot[i][7]):
+                            showList.append(programsListForBot[i][8])
+                for i in showList:
+                    programsText += """{0}. {1}\n""".format(showList.index(str(i))+1,i)
+
+
+            def WriteText(message, text, b=False):
+                if(b == False):
+                    bot.send_message(message.chat.id,text)
+                else:
+                    bot.send_message(message.chat.id,text,reply_markup=markupHide)
+
             if(message.text == answers['prefabs'][0]):
                 endList.append(ChooseProgramDict['prefabs'][0])
             elif(message.text == answers['prefabs'][1]):
-                endList.append(ChooseProgramDict['prefabs'][1])
-            bot.send_message(message.chat.id,'{}😋.'.format(endList),reply_markup=markupHide)
-            bot.send_message(message.chat.id,'{}😋.'.format(programsListForBot),reply_markup=markupHide)
-            for i in programsListForBot:
-                    if(endList[0] in programsListForBot[i][0] and endList[1] in programsListForBot[i][1] and endList[2] == programsListForBot[i][2] and endList[3] >= programsListForBot[i][3] and endList[4] in programsListForBot[i][4] and endList[5] in programsListForBot[i][5] and endList[6] in programsListForBot[i][6] and endList[7] in programsListForBot[i][7]):
-                        bot.send_message(message.chat.id,programsListForBot[i][8])
+                endList.append(ChooseProgramDict['prefabs'][1])                
 
+            el1 = Thread(target=AddToShowList,args=(message,))
+            el1.start()
+            WriteText(message,diagnostics,True)
+            time.sleep(1)
+            WriteText(message,loading)
+            time.sleep(0.7)
+            bot.send_message(message.chat.id,{'Результаты:\n{}'.format(programsText)})
 
             endList.clear()
-            bot.send_message(message.chat.id,'{}😋.'.format(endList))
+            programsText = ""
+            #bot.send_message(message.chat.id,'{}😋.'.format(endList))
+            #bot.send_message(message.chat.id,'{}😋.'.format(programsText))
         
         bot.polling(none_stop=True)
