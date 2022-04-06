@@ -162,6 +162,38 @@ application = get_wsgi_application()
 #bot settings
     
 from Main_page.models import *
+
+def CreateNewTableAboutUser(first_name,last_name,id_of_user,choise):
+    bases = ChoiseOfUser.objects.all()
+    isHere = False
+    if(len(bases) <= 0):
+        someModel = ChoiseOfUser()
+        someModel.first_name = first_name
+        someModel.second_name = last_name
+        someModel.id_of_user = id_of_user
+        someModel.choise = choise 
+        someModel.save()
+        print('o+1')
+        isHere = True
+    elif(len(bases) >= 1):
+        for i in bases:
+            if(int(i.id_of_user) == int(id_of_user)):
+                i.choise = choise
+                isHere = True
+                print('dop')
+                break
+            elif(not (int(i.id_of_user) == int(id_of_user))):
+                isHere = False
+                print('ne is')
+    if(isHere == False):
+        someModel = ChoiseOfUser()
+        someModel.first_name = first_name
+        someModel.second_name = last_name
+        someModel.id_of_user = id_of_user
+        someModel.choise = choise 
+        someModel.save()
+        print('new')
+    
 key = '1857719214:AAFdr9bYxDlQiLKDi6otg8CGcWfJPHJOAnk'
 
 start_chatting = """Привет! Я GIDA BOT, виртуальный ассистент, специализирующийся на 3D-моделировании.
@@ -171,7 +203,7 @@ start_chatting = """Привет! Я GIDA BOT, виртуальный ассис
 qustions = ["Какое устройство вы планируете использовать для 3D-моделирования?",
 "Планируете ли вы использовать платное (или бесплатное приложение)?",
 "Как вы планируете использовать 3D модели?",
-"Какой вид моделирования вас интеремует?",
+"Какой вид моделирования вас интересует?",
 "Насколько углубленно вы собираетесь изучать 3D-моделирование?",
 "Допускаете ли вы возможность использования готовых объектов в создании модели?"
 ]

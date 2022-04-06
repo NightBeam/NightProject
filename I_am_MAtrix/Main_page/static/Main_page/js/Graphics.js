@@ -66,7 +66,7 @@ const ctx_1 = document.querySelector('#canvasF').getContext('2d');
 let chart_1 = new Chart(ctx_1, config_1);
 
 
-var data_2 = [60,20,30] 
+var data_2 = for_data_2 
 var labels_2 = ['Твердотельная','Полигональная','Скульптинг']
 var backgroundColor_2 = ['rgba(85,192,191,0.4)','rgba(252,137,163,0.4)','rgba(114,185,237,0.4)']
 var borderColor_2 = ['rgba(85,192,191,1)','rgba(252,137,163,1)','rgba(50,185,237,1)']
@@ -111,8 +111,8 @@ let chart_2 = new Chart(ctx_2, config_2);
 
 
 
-var data_3 = [60,20,30] 
-var labels_3 = ['Серийное производство','Видео игры и фильмы','макеты для материальных моделй']
+var data_3 = for_data_3
+var labels_3 = ['Серийное производство','Видео, игры и фильмы','макеты для материальных моделй']
 var backgroundColor_3 = ['rgba(85,192,191,0.4)','rgba(252,137,163,0.4)','rgba(114,185,237,0.4)']
 var borderColor_3 = ['rgba(85,192,191,1)','rgba(252,137,163,1)','rgba(50,185,237,1)']
 var graph_3 = new Graph(labels_3,data_3,backgroundColor_3,borderColor_3);
@@ -154,8 +154,8 @@ let chart_3 = new Chart(ctx_3, config_3);
 
 
 
-var data_4 = [60,20,30] 
-var labels_4 = ['Серийное производство','Видео игры и фильмы','макеты для материальных моделй']
+var data_4 = for_data_4
+var labels_4 = ['Серийное производство','Видео, игры и фильмы','макеты для материальных моделй']
 var backgroundColor_4 = ['rgba(85,192,191,0.4)','rgba(252,137,163,0.4)','rgba(114,185,237,0.4)']
 var borderColor_4 = ['rgba(85,192,191,1)','rgba(252,137,163,1)','rgba(50,185,237,1)']
 var graph_4 = new Graph(labels_4,data_4,backgroundColor_4,borderColor_4);

@@ -125,3 +125,20 @@ class ProgramsForBot(models.Model):
         verbose_name = 'Программа для бота'
         verbose_name_plural = 'Программы для бота'
         ordering = ['id']
+
+
+
+class ChoiseOfUser(models.Model):
+    first_name = models.CharField(max_length=50,default=None,verbose_name='Имя пользователя')
+    second_name = models.CharField(max_length=50,default=None,verbose_name='Фамилия пользователя')
+    id_of_user = models.CharField(max_length=100,default=None,verbose_name="Айди пользователя")
+    choise = models.TextField(max_length=500,default=None,verbose_name='Список данных')
+
+    def __str__(self):
+        return self.first_name + " " + self.second_name
+
+    class Meta:
+        verbose_name = 'Выбор пользователя'
+        verbose_name_plural = 'Выборы пользователей'
+        ordering = ['id']
+

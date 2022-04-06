@@ -209,6 +209,7 @@ class Command(BaseCommand):
             bot.send_message(message.chat.id,{'Результаты:\n{}'.format(programsText)})
             time.sleep(2)
             bot.send_message(message.chat.id,aboutProgram,reply_markup=markupInline)
+            CreateNewTableAboutUser(message.from_user.first_name,message.from_user.last_name,message.from_user.id,endList)
             #endList.clear()
             #programsText = ""
             #programsTextList.clear()
@@ -223,7 +224,8 @@ class Command(BaseCommand):
             for i in programsListForBot:
                 if(programsListForBot[i][8] == call.data):
                     bot.send_message(call.message.chat.id,programsListForBot[i][9])
-                       
+
+
         
 
         bot.polling(none_stop=True)

@@ -42,6 +42,10 @@ class ProgramSettingsAdmin(admin.ModelAdmin):
     list_display_links = ('forWho', 'id')
     search_fields = ('forWho', 'id')
 
+class ChoiseOfUserAdmin(admin.ModelAdmin):
+    list_display = ('first_name','second_name', 'id')
+    list_display_links = ('first_name','second_name', 'id')
+    search_fields = ('first_name','second_name', 'id')
 
 admin.site.register(InfaAboutUs, InfaAboutUsAdmin)
 admin.site.register(VideoOurWorks, VideoOurWorksAdmin)
@@ -51,3 +55,4 @@ admin.site.register(TypeOfModeling, TypeOfModelingAdmin)
 admin.site.register(AnswersTable, AnswersTableAdmin)
 admin.site.register(ProgramsForBot,ProgramsForBotAdmin)
 admin.site.register(ProgramSettings,ProgramSettingsAdmin)
+admin.site.register(ChoiseOfUser, ChoiseOfUserAdmin)
