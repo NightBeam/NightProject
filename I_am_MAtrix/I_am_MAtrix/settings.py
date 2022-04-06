@@ -209,6 +209,7 @@ ChooseProgramDict = {
     'prefabs':['Help', 'Yourself']
 }
 programsText = ""
+programsTextList = list()
 endList = list()
 programsList = ProgramsForBot.objects.all()
 programsListForBot = dict()
@@ -223,5 +224,5 @@ for i in programsList:
         i.settingsOfProgram.experience,
         i.settingsOfProgram.prefabs,
         i.name,
-        i.description
+        i.description,
     ]

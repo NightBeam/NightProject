@@ -319,6 +319,18 @@ video{
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
+.name_of_diagrams{
+	text-align: center;
+	font-size: 60px;
+	font-family: monospace;
+	margin-top: 30px;
+	background-color:white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	-webkit-box-shadow: 4px 4px 87px -15px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 4px 87px -15px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 4px 87px -15px rgba(34, 60, 80, 0.2);
+}
 .diagram{
 	margin-top:75px;
 }
@@ -327,6 +339,14 @@ video{
 	width:500px;
 }
 #canvasTB{
+	height:500px;
+	width:500px;
+}
+#canvasFU{
+	height:500px;
+	width:500px;
+}
+#canvasTBU{
 	height:500px;
 	width:500px;
 }
@@ -574,6 +594,9 @@ video{
 		border: 5px solid white;
 	}
 	/*Statistics*/
+	.name_of_diagrams{
+		font-size:40px;
+	}
 	.descF :last-child{
 		margin-top: 10px;
 	}
@@ -605,6 +628,14 @@ video{
 		width:400px;
 	}
 	#canvasTB{
+		height:400px;
+		width:400px;
+	}
+	#canvasFU{
+		height:400px;
+		width:400px;
+	}
+	#canvasTBU{
 		height:400px;
 		width:400px;
 	}

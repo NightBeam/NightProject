@@ -5,8 +5,9 @@
 {% block content %}
     <div class="content">
       <div class="name_of_page">{{name_of_page}}</div>
+      <div class="name_of_diagrams">Виды моделирования</div>
       <div class="diagrams">
-        <div class="diagram"><canvas id="canvasF" v1="{{typeOfModeling.0}}" v2="{{typeOfModeling.1}}" v3="{{typeOfModeling.2}}"></canvas></div>
+        <div class="diagram"><canvas id="canvasF"></canvas></div>
         <div class="diagram"><canvas id="canvasTB" ></canvas></div>
       </div>
       <div class="harac">
@@ -16,9 +17,21 @@
           <li id="elH3">Скульптинг</li>
         </ul>
       </div>
+      <div class="name_of_diagrams">Цели</div>
+      <div class="diagrams">
+        <div class="diagram"><canvas id="canvasFU"></canvas></div>
+        <div class="diagram"><canvas id="canvasTBU" ></canvas></div>
+      </div>
+      <div class="harac">
+        <ul>
+          <li id="elH1">Серийное производство</li>
+          <li id="elH2">Видео игры и фильмы</li>
+          <li id="elH3">макеты для материальных моделй</li>
+        </ul>
+      </div>
       <div class="descF">
         <p>Визуальное оформление данных, взятых с <span id="gF"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdnRNkDSICLUHnCWUCP9QIcvNW_wDF8R9E-64DZEhf9Bzzggg/viewform">google форм</a></span> и <span id="tB"><a href="#">telegram-бота</a></span>, для проведения количественного исследования.</p>
         <p>Что позволит исследовать, сделать вывод из наблюдений и представить результаты своего исследования проекта.</p>
       </div> 
-    </div>
+    </div> 
 {% endblock %}

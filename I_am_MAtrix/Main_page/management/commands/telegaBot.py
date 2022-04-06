@@ -15,6 +15,9 @@ class Command(BaseCommand):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         markupHide = types.ReplyKeyboardRemove()
 
+
+        markupInline = types.InlineKeyboardMarkup(row_width=3)
+
         def SendTo(message, answers, Aindex, Qindex, toMethod):
             markup.keyboard.clear()
             for i in answers[Aindex]:
@@ -24,6 +27,13 @@ class Command(BaseCommand):
 
         @bot.message_handler(commands=['start'])
         def start(message):
+            global endList
+            global programsTextList
+            global programsText
+            endList.clear()
+            programsText = ""
+            programsTextList.clear()
+
             markup.keyboard.clear()
             markup.add('Поехали!')
             bot.send_message(message.chat.id, str(start_chatting),reply_markup=markup)
@@ -168,6 +178,7 @@ class Command(BaseCommand):
                             showList.append(programsListForBot[i][8])
                 for i in showList:
                     programsText += """{0}. {1}\n""".format(showList.index(str(i))+1,i)
+                    programsTextList.append(i)
 
 
             def WriteText(message, text, b=False):
@@ -176,22 +187,43 @@ class Command(BaseCommand):
                 else:
                     bot.send_message(message.chat.id,text,reply_markup=markupHide)
 
+            def InlineRequest(message):
+                markupInline.keyboard.clear()
+                for i in programsTextList:
+                    markupInline.row(types.InlineKeyboardButton(str(programsTextList.index(i)+1), callback_data=i))
+                    
+
             if(message.text == answers['prefabs'][0]):
                 endList.append(ChooseProgramDict['prefabs'][0])
             elif(message.text == answers['prefabs'][1]):
                 endList.append(ChooseProgramDict['prefabs'][1])                
 
             el1 = Thread(target=AddToShowList,args=(message,))
+            el2 = Thread(target=InlineRequest,args=(message,))
             el1.start()
+            el2.start()
             WriteText(message,diagnostics,True)
             time.sleep(1)
             WriteText(message,loading)
             time.sleep(0.7)
             bot.send_message(message.chat.id,{'Результаты:\n{}'.format(programsText)})
-
-            endList.clear()
-            programsText = ""
+            time.sleep(2)
+            bot.send_message(message.chat.id,aboutProgram,reply_markup=markupInline)
+            #endList.clear()
+            #programsText = ""
+            #programsTextList.clear()
             #bot.send_message(message.chat.id,'{}😋.'.format(endList))
             #bot.send_message(message.chat.id,'{}😋.'.format(programsText))
+
+
+        @bot.callback_query_handler(func=lambda call: True)
+        def getNumblerOfProgram(call):
+            global programsListForBot
+            global programsTextList
+            for i in programsListForBot:
+                if(programsListForBot[i][8] == call.data):
+                    bot.send_message(call.message.chat.id,programsListForBot[i][9])
+                       
         
+
         bot.polling(none_stop=True)
