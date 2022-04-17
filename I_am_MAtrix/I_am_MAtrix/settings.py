@@ -179,6 +179,7 @@ def CreateNewTableAboutUser(first_name,last_name,id_of_user,choise):
         for i in bases:
             if(int(i.id_of_user) == int(id_of_user)):
                 i.choise = choise
+                i.save()
                 isHere = True
                 print('dop')
                 break

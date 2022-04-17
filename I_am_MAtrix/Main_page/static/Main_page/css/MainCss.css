@@ -807,6 +807,8 @@ video{
 
 	/*OurWorks*/
 	.video #el1 {
+		margin-left: 15px;
+	    margin-right: 15px;
 		width:20%;
 		border-radius: 25px;
 		border: 5px solid white;
